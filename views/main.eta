@@ -1,13 +1,7 @@
 <% layout("./layouts/layout.eta") %>
 
-<h1>Questions!</h1>
+<h1>Question application</h1>
 
-<h2>Add a question!</h2>
+<p>This is an application where you can add questions.
 
-<form method="POST" action="/questions">
-Title:<br/>
-<input type="text" name="title" /><br/>
-Description:<br/>
-<textarea name="description"></textarea><br/>
-<input type="submit" value="Add"/>
-</form>
+<p>If you haven't used the application before, you can start by <a href="/auth/register">registering</a>. If you have been here before, just <a href="/auth/login">log in</a>!</p>

@@ -2,8 +2,12 @@ import { Pool } from "../deps.js";
 
 const CONCURRENT_CONNECTIONS = 2;
 const connectionPool = new Pool({
-  // add your database configuration here
-}, CONCURRENT_CONNECTIONS);
+    hostname: "chunee.db.elephantsql.com",
+    database: "czxqsfea",
+    user: "czxqsfea",
+    password: "zL_SxUj7gZ2Lwns9cMT51e6dxv5eb4LJ",
+    port: 5432,
+  }, CONCURRENT_CONNECTIONS);
 
 const executeQuery = async (query, ...args) => {
   const response = {};
@@ -29,4 +33,4 @@ const executeQuery = async (query, ...args) => {
   return response;
 };
 
-export { executeQuery };
+export { executeQuery };git init

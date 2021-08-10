@@ -1,0 +1,39 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1><%= it.question.title %></h1>
+
+<h2><%= it.question.question_text %></h2>
+
+<form action="/questions/<%= it.question.id %>/options" method="POST">
+   Question text:<br/>
+   <textarea name="question_text"></textarea><br/>
+   Option:<br/>
+   <input type="checkbox" name="is_correct" />
+</form>
+
+
+<% if (it.questionOptions && it.questionOptions.length > 0) { %>
+<ul>
+<% it.questionOptions.forEach((questionOption) => { %>
+  <% if (questionOption.is_correct == true){ %>
+  <li>Right <%= questionOption.option_text %></li>
+  <% } else { %>
+  <li>Wrong <%= questionOption.option_text %></li>
+  <% }; %>
+  <form method='POST' action='/questions/<%= questionOption.question_id %>/options/<%= questionOption.id %>/delete'>
+    <input type='submit' value='Delete option' />
+    </form>
+ <% }; %>
+</ul>
+<% } else { %>
+
+<h2>Complete project</h2>
+
+<form action="/questions/<%= it.question.id %>/delete" method="POST">
+  <input type="submit" value="Delete question!" />
+</form>
+
+
+<% }  %>
+
+
