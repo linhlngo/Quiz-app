@@ -33,4 +33,4 @@ const executeQuery = async (query, ...args) => {
   return response;
 };
 
-export { executeQuery };git init
+export { executeQuery };
