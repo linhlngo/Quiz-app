@@ -2,7 +2,7 @@ import { Router } from "https://deno.land/x/oak@v7.7.0/mod.ts";
 import * as mainController from "./controllers/mainController.js";
 import * as questionController from "./controllers/questionController.js";
 import * as registrationController from "./controllers/registrationController.js";
-import * as loginController from "./controllers/loginController";
+import * as loginController from "./controllers/loginController.js";
 
 
 const router = new Router();
